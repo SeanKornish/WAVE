@@ -1,2 +1,2 @@
 # WAVE
-Web Application VuWeb Application Vulnerability Exporter
+Web Application Vulnerability Exporter
