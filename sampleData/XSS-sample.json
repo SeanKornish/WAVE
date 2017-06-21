@@ -1,0 +1,41 @@
+{
+	"details" : {
+		"description" : "Reflected attacks are those where the injected script is reflected off the web server, such as in an error message, search result, or any other response that includes some or all of the input sent to the server as part of the request. Reflected attacks are delivered to victims via another route, such as in an e-mail message, or on some other web site. When a user is tricked into clicking on a malicious link, submitting a specially crafted form, or even just browsing to a malicious site, the injected code travels to the vulnerable web site, which reflects the attack back to the user’s browser. The browser then executes the code because it came from a \"trusted\" server. Reflected XSS is also sometimes referred to as Non-Persistent or Type-II XSS.",
+		"technology" : "JSP",
+		"attack_hints" : ["What happens when you enter special characters (e.g. \"<\")?", "How are HTML tags treated (e.g. \"<b>\")", "Have you tried \"<script>\""],
+		"remediation_hints" : ["How can you prevent the browser from treating the input as plain HTML?", "Some of the imported libraries may be useful for character encoding"],
+		"notes" : "If you are unable to set the X-XSS-Protection header to 0, you cannot use Internet Explorer, Chrome or Safari. Otherwise the script will not be executed (but will still be encoded correctly)"
+	},
+
+	"metadata" : "OWASP-2017-A3",
+
+	"UI" : [{
+		"type" : "HTML",
+		"file" : "reflected-xss.html.zip"
+	}],
+
+	"code-behind" : [{
+		"client-server" : "client",
+		"file" : "hello.jsp.zip"
+	}],
+
+	"test" : [{
+		"technology" : "Selenium",
+		"file" : ""
+	}],
+
+	"remediation_code" : [{
+		"client-server" : "client",
+		"file" : "hello-rem.jsp.zip"
+	}],
+
+	"ctf" : {
+		"points" : 10,
+		"time" : 30,
+		"hints" : ["What happens when you enter special characters (e.g. \"<\")?", "How are HTML tags treated (e.g. \"<b>\")", "Have you tried \"<script>\""],
+		"description" : ""
+	}
+}
+
+
+
