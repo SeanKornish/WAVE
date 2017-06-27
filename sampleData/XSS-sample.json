@@ -20,8 +20,8 @@
 	}],
 
 	"test" : [{
-		"technology" : "Selenium",
-		"file" : ""
+		"technology" : "JWebUnit",
+		"file" : "XSS-sample-test.java.zip"
 	}],
 
 	"remediation_code" : [{
