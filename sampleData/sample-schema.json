@@ -1,0 +1,121 @@
+{
+    "properties" : {
+        "details" : {
+            "properties" : {
+                "description" : {
+                    "description" : "Describes the type of the vulnerability",
+                    "type" : "string"
+                },
+                "technology" : {
+                    "type" : "string",
+                    "enum" : ["JSP"]  /* list of currently supported technologies */
+                },
+                "attack_hints" : {
+                    "description" : "A list of hints for the attack stage",
+                    "type" : "array",
+                    "items": {
+                        "type": "string"
+                    } 
+                },
+                "remediation_hints" : {
+                    "description" : "A list of hints for the remediation stage",
+                    "type" : "array",
+                     "items" : {
+                        "type" : "string"
+                      }
+                },
+                "notes" : {
+                    "description" : "Any additional nodes with valuable information",
+                    "type" : "string"
+                }
+            },
+            "required" : ["technology"]
+        },
+
+        "metadata" : {
+            "type" : "string"
+        },
+
+        "UI" : {
+            "type" : "array",
+            "items": {
+                "properties" : {
+                    "type" : {
+                        "type" : "string",
+                        "enum" : ["HTML", "CSS", "JavaScript"]
+                    },
+                    "file" : {
+                        "type" : "string"
+                    }
+                }
+            }
+        },
+
+        "code-behind" : {
+            "type" : "array",
+            "items": {
+                "properties" : {
+                    "client-server" : {
+                        "type" : "string",
+                        "enum" : ["client", "server"]
+                    },
+                    "file" : {
+                        "type" : "string"
+                    }
+                }
+            }
+        },
+
+        "test" : {
+            "type" : "array",
+            "items": {
+                "properties" : {
+                    "technology" : {
+                        "type" : "string"
+                    },
+                    "file" : {
+                        "type" : "string"
+                    }
+                }
+            }
+        },
+
+        "remediation_code" : {
+            "type" : "array",
+            "items": {
+                "properties" : {
+                    "client-server" : {
+                        "type" : "string",
+                        "enum" : ["client", "server"]
+                    },
+                    "file" : {
+                        "type" : "string"
+                    }
+                }
+            }
+        },
+
+        "ctf" : {
+            "properties" : {
+                "points" : {
+                    "type" : "integer"
+                },
+                "time" : {
+                    "description" : "Time for completion in minutes.",
+                    "type" : "integer"
+                },
+                "hints" : {
+                    "type" : "array",
+                    "items" : {
+                        "type" : "string"
+                    }
+                },
+                "description" : {
+                    "type" : "string"
+                }
+            }
+        }
+    }
+}
+
+
