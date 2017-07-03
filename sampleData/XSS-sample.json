@@ -30,10 +30,40 @@
 	}],
 
 	"ctf" : {
-		"points" : 10,
-		"time" : 30,
-		"hints" : ["What happens when you enter special characters (e.g. \"<\")?", "How are HTML tags treated (e.g. \"<b>\")", "Have you tried \"<script>\""],
-		"description" : ""
+		"category" : {
+			"title" : "XSS",
+			"description" : "Cross-site scripting",
+			"exposed" : true,
+			"available-from" : 1498844723,
+			"available-until" : 1514764800,
+		},
+		"challenge" : {
+			"title" : "Reflected XSS",
+			"description" : "Reflected Cross-site scripting",
+			"exposed" : true,
+			"available-from" : 1498844723,
+			"available-until" : 1514764800,
+			"flag" : "XSS",
+			"case-insensitive" : true,
+			"automark" : false,
+			"points" : 10,
+			"attempts" : 50,
+			"time-between-attempts" : 30,
+		},
+		"hints" : [
+			{
+				"body" : "What happens when you enter special characters (e.g. \"<\")?", 
+				"visible" : true
+			},
+			{
+				"body" : "How are HTML tags treated (e.g. \"<b>\")", 
+				"visible" : false
+			},
+			{
+				"body" : "Have you tried \"<script>\"", 
+				"visible" : false
+			}
+		]
 	}
 }
 
