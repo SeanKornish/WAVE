@@ -10,7 +10,7 @@
 	"metadata" : "OWASP-2017-A3",
 
 	"UI" : [{
-		"type" : "HTML",
+		"technology" : "HTML",
 		"file" : "reflected-xss.html.zip"
 	}],
 
@@ -21,11 +21,19 @@
 
 	"test" : [{
 		"technology" : "JWebUnit",
-		"file" : "XSS-sample-test.java.zip"
+		"file" : "XSS-sample-test.java.zip",
+		"url" : "http://localhost:8080/testing/",
+		"start-path" : "reflected-xss.html"
 	}],
 
 	"remediation_code" : [{
 		"client-server" : "client",
+		"technology" : "HTML",
+		"file" : "reflected-xss.html.zip"
+	},
+		{
+		"client-server" : "client",
+		"technology" : "JSP",
 		"file" : "hello-rem.jsp.zip"
 	}],
 

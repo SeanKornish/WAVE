@@ -40,7 +40,7 @@
             "type" : "array",
             "items": {
                 "properties" : {
-                    "type" : {
+                    "technology" : {
                         "type" : "string",
                         "enum" : ["HTML", "CSS", "JavaScript"]
                     },
@@ -88,6 +88,10 @@
                         "type" : "string",
                         "enum" : ["client", "server"]
                     },
+                    "technology" : {
+                        "type" : "string",
+                        "enum" : ["JSP", "HTML", "CSS", "JavaScript"]
+                    },
                     "file" : {
                         "type" : "string"
                     }
@@ -114,7 +118,8 @@
                         "available-until" : {
                             "type" : "integer"
                         }
-                    }
+                    },
+                    "required" : ["title"]
                 },
                 "challenge" : {
                     "properties" : {
@@ -151,7 +156,9 @@
                         "time-between-attempts" : {
                             "type" : "integer"
                         }
-                    }
+                    },
+                    "additionalProperties": false,
+                    "minProperties": 11
                 },
                 "hints" : {
                     "type" : "array",
@@ -163,10 +170,13 @@
                             "visible" : {
                                 "type" : "boolean"
                             }
-                        }
+                        },
+                        "additionalProperties": false,
+                        "minProperties": 2
                     }
                 }
-            }
+            },
+            "required" : ["category", "challenge"]
         }
     }
 }
