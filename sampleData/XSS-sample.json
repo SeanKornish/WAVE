@@ -57,6 +57,7 @@
 			"points" : 10,
 			"attempts" : 50,
 			"time-between-attempts" : 30,
+			"must-complete-after" : "Name of required challenge"
 		},
 		"hints" : [
 			{

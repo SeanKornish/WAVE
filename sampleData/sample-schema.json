@@ -155,10 +155,12 @@
                         },
                         "time-between-attempts" : {
                             "type" : "integer"
+                        },
+                        "must-complete-after"  : {
+                            "type" : "string"
                         }
                     },
-                    "additionalProperties": false,
-                    "minProperties": 11
+                    "required" : ["title", "description", "exposed", "available-from", "available-until", "flag", "case-insensitive", "automark", "points", "attempts", "time-between-attempts"]
                 },
                 "hints" : {
                     "type" : "array",
