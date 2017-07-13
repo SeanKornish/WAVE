@@ -1,0 +1,11 @@
+INSERT INTO categories (added, added_by, title, description, exposed, available_from, available_until)
+VALUES (1498844732, 1, "sql insert test title", "test description", 1, 1498844732, 1514764800)
+
+INSERT INTO challenges (added, added_by, title, category, description, exposed, available_from, available_until, flag, points)
+VALUES (1498844732, 1, "sql insert test title", 2, "test description", 1, 1498844732, 1514764800, "test challenge", 10)
+
+INSERT INTO hints (challenge, added, added_by, visible, body)
+VALUES (3, 1498844732, 1, 1, "test insert hint")
+
+/* terminal command:  mysql mellivora -u root -p < sqlInsertTEST */
+
