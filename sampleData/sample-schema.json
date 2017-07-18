@@ -40,7 +40,7 @@
             "type" : "array",
             "items": {
                 "properties" : {
-                    "type" : {
+                    "technology" : {
                         "type" : "string",
                         "enum" : ["HTML", "CSS", "JavaScript"]
                     },
@@ -88,6 +88,10 @@
                         "type" : "string",
                         "enum" : ["client", "server"]
                     },
+                    "technology" : {
+                        "type" : "string",
+                        "enum" : ["JSP", "HTML", "CSS", "JavaScript"]
+                    },
                     "file" : {
                         "type" : "string"
                     }
@@ -97,23 +101,84 @@
 
         "ctf" : {
             "properties" : {
-                "points" : {
-                    "type" : "integer"
+                "category" : {
+                    "properties" : {
+                        "title" : {
+                            "type" : "string"
+                        },
+                        "description" : {
+                            "type" : "string"
+                        },
+                        "exposed" : {
+                            "type" : "boolean"
+                        },
+                        "available-from" : {
+                            "type" : "integer"
+                        },
+                        "available-until" : {
+                            "type" : "integer"
+                        }
+                    },
+                    "required" : ["title"]
                 },
-                "time" : {
-                    "description" : "Time for completion in minutes.",
-                    "type" : "integer"
+                "challenge" : {
+                    "properties" : {
+                        "title" : {
+                            "type" : "string"
+                        },
+                        "description" : {
+                            "type" : "string"
+                        },
+                        "exposed" : {
+                            "type" : "boolean"
+                        },
+                        "available-from" : {
+                            "type" : "integer"
+                        },
+                        "available-until" : {
+                            "type" : "integer"
+                        },
+                        "flag" : {
+                            "type" : "string"
+                        },
+                        "case-insensitive" : {
+                            "type" : "boolean"
+                        },
+                        "automark" : {
+                            "type" : "boolean"
+                        },
+                        "points" : {
+                            "type" : "integer"
+                        },
+                        "attempts" : {
+                            "type" : "integer"
+                        },
+                        "time-between-attempts" : {
+                            "type" : "integer"
+                        },
+                        "must-complete-after"  : {
+                            "type" : "string"
+                        }
+                    },
+                    "required" : ["title", "description", "exposed", "available-from", "available-until", "flag", "case-insensitive", "automark", "points", "attempts", "time-between-attempts"]
                 },
                 "hints" : {
                     "type" : "array",
                     "items" : {
-                        "type" : "string"
+                        "properties" : {
+                            "body" : {
+                                "type" : "string"
+                            },
+                            "visible" : {
+                                "type" : "boolean"
+                            }
+                        },
+                        "additionalProperties": false,
+                        "minProperties": 2
                     }
-                },
-                "description" : {
-                    "type" : "string"
                 }
-            }
+            },
+            "required" : ["category", "challenge"]
         }
     }
 }
