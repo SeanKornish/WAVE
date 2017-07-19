@@ -1,6 +1,7 @@
 package DataModel;
 
 import java.io.File;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
@@ -11,7 +12,7 @@ public class DMTestFile {
 
     private String technology;
     private File file;
-    private String baseURL;
+    private URL baseURL;
     private String startPath;
 
     public String getTechnology() {
@@ -30,12 +31,16 @@ public class DMTestFile {
         this.file = file;
     }
 
-    public String getBaseURL() {
+    public URL getBaseURL() {
         return baseURL;
     }
 
-    public void setBaseURL(String baseURL) {
-        this.baseURL = baseURL;
+    public void setBaseURL(String baseURL)  {
+        try {
+            this.baseURL = new URL(baseURL);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
     }
 
     public String getStartPath() {

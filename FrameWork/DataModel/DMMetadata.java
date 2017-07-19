@@ -6,9 +6,13 @@ package DataModel;
  */
 public class DMMetadata {
 
+    private String metadata;
+
     public DMMetadata(String metadata) {
         this.metadata = metadata;
     }
 
-    private String metadata;
+    public String getMetadata() {
+        return metadata;
+    }
 }

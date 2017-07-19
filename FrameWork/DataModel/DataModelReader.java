@@ -113,6 +113,7 @@ public class DataModelReader {
         testFile.setFile(new File(jsonTestFile.get("file").toString()));
         testFile.setTechnology(jsonTestFile.get("technology").toString());
         testFile.setBaseURL(jsonTestFile.get("url").toString());
+        testFile.setStartPath(jsonTestFile.get("start-path").toString());
         testFiles.add(testFile);
     }
 
@@ -159,5 +160,45 @@ public class DataModelReader {
         hint.setVisible((boolean) jsonCTFHint.get("visible"));
         hint.setChallenge(challenge);
         hints.add(hint);
+    }
+
+    public File getDataFile() {
+        return dataFile;
+    }
+
+    public DMDetails getDetails() {
+        return details;
+    }
+
+    public DMMetadata getMetadata() {
+        return metadata;
+    }
+
+    public ArrayList<DMUIFile> getUiFiles() {
+        return uiFiles;
+    }
+
+    public ArrayList<DMCodeBehindFile> getCbFiles() {
+        return cbFiles;
+    }
+
+    public ArrayList<DMTestFile> getTestFiles() {
+        return testFiles;
+    }
+
+    public ArrayList<DMRemediationCodeFile> getRemFiles() {
+        return remFiles;
+    }
+
+    public DMCTFCategory getCategory() {
+        return category;
+    }
+
+    public DMCTFChallenge getChallenge() {
+        return challenge;
+    }
+
+    public ArrayList<DMCTFHint> getHints() {
+        return hints;
     }
 }
