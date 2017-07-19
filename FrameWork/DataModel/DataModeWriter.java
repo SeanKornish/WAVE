@@ -44,8 +44,6 @@ public class DataModeWriter {
 
         try (FileWriter writer = new FileWriter(dataFile)) {
             jsonOut.writeJSONString(writer);
-            System.out.print(jsonOut.toString());
-//            file.write(jsonOut.toJSONString());
         } catch (IOException e) {
             e.printStackTrace();
         }
