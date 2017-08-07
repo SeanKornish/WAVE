@@ -32,6 +32,27 @@
             "required" : ["technology"]
         },
 
+        "config" : {
+            "properties" : {
+                "base_URL": {
+                    "description": "The URL of the application",
+                    "type": "string"
+                },
+                "vulnerability_URL": {
+                    "description": "the local path to the vulnerability module",
+                    "type": "string"
+                },
+                "vulnerability_link": {
+                    "description": "name of the link in the welcome page",
+                    "type": "string"
+                },
+                "file": {
+                    "description": "Configuration files",
+                    "type" : "string"
+                }
+            }
+        },
+
         "metadata" : {
             "type" : "string"
         },

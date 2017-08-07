@@ -20,6 +20,7 @@ public class DataModelReader {
 
     private File dataFile;
     private DMDetails details;
+    private DMConfig config;
     private DMMetadata metadata;
     private ArrayList<DMUIFile> uiFiles;
     private ArrayList<DMCodeBehindFile> cbFiles;
@@ -47,6 +48,7 @@ public class DataModelReader {
             JSONObject jsonObject = (JSONObject) parser.parse(new FileReader(dataFile));
             readDetails(jsonObject);
             metadata = new DMMetadata(jsonObject.get("metadata").toString());
+            readConfig(jsonObject);
 
             JSONArray jsonUIFiles = (JSONArray) jsonObject.get("UI");
             for (Object jsonUIFile : jsonUIFiles ) {
@@ -94,6 +96,15 @@ public class DataModelReader {
         details.setNotes(jsonDetails.get("notes").toString());
     }
 
+    private void readConfig(JSONObject jsonObject) {
+        JSONObject jsonConfig = (JSONObject) jsonObject.get("config");
+        config = new DMConfig();
+        config.setBaseURL(jsonConfig.get("base_URL").toString());
+        config.setVulnURL(jsonConfig.get("vulnerability_URL").toString());
+        config.setVulnLink(jsonConfig.get("vulnerability_link").toString());
+        config.setFiles(jsonConfig.get("file").toString());
+    }
+
     private void readUIFile(JSONObject jsonUIFile) {
         DMUIFile uiFile = new DMUIFile();
         uiFile.setFile(new File(jsonUIFile.get("file").toString()));
@@ -112,8 +123,6 @@ public class DataModelReader {
         DMTestFile testFile = new DMTestFile();
         testFile.setFile(new File(jsonTestFile.get("file").toString()));
         testFile.setTechnology(jsonTestFile.get("technology").toString());
-        testFile.setBaseURL(jsonTestFile.get("url").toString());
-        testFile.setStartPath(jsonTestFile.get("start-path").toString());
         testFiles.add(testFile);
     }
 
@@ -200,5 +209,9 @@ public class DataModelReader {
 
     public ArrayList<DMCTFHint> getHints() {
         return hints;
+    }
+
+    public DMConfig getConfig() {
+        return config;
     }
 }

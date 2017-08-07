@@ -12,8 +12,6 @@ public class DMTestFile {
 
     private String technology;
     private File file;
-    private URL baseURL;
-    private String startPath;
 
     public String getTechnology() {
         return technology;
@@ -29,25 +27,5 @@ public class DMTestFile {
 
     public void setFile(File file) {
         this.file = file;
-    }
-
-    public URL getBaseURL() {
-        return baseURL;
-    }
-
-    public void setBaseURL(String baseURL)  {
-        try {
-            this.baseURL = new URL(baseURL);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public String getStartPath() {
-        return startPath;
-    }
-
-    public void setStartPath(String startPath) {
-        this.startPath = startPath;
     }
 }
