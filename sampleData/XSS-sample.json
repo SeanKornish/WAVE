@@ -4,7 +4,14 @@
 		"technology" : "JSP",
 		"attack_hints" : ["What happens when you enter special characters (e.g. \"<\")?", "How are HTML tags treated (e.g. \"<b>\")", "Have you tried \"<script>\""],
 		"remediation_hints" : ["How can you prevent the browser from treating the input as plain HTML?", "Some of the imported libraries may be useful for character encoding"],
-		"notes" : "If you are unable to set the X-XSS-Protection header to 0, you cannot use Internet Explorer, Chrome or Safari. Otherwise the script will not be executed (but will still be encoded correctly)"
+		"notes" : "If you are unable to set the X-XSS-Protection header to 0, you cannot use Internet Explorer, Chrome or Safari. Otherwise the script will not be executed (but will still be encoded correctly)",
+	},
+
+	"config" : {
+		"base_URL" : "http://localhost:8080/testing/",
+		"vulnerability_URL" : "reflected-xss.html",
+		"vulnerability_link" : "Greeting",
+		"file" : "WEB-INF.zip"
 	},
 
 	"metadata" : "OWASP-2017-A3",
@@ -22,8 +29,6 @@
 	"test" : [{
 		"technology" : "JWebUnit",
 		"file" : "XSS-sample-test.java.zip",
-		"url" : "http://localhost:8080/testing/",
-		"start-path" : "reflected-xss.html"
 	}],
 
 	"remediation_code" : [{

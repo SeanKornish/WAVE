@@ -17,6 +17,7 @@ public class DataModeWriter {
 
     private File dataFile;
     private DMDetails details;
+    private DMConfig config;
     private DMMetadata metadata;
     private ArrayList<DMUIFile> uiFiles;
     private ArrayList<DMCodeBehindFile> cbFiles;
@@ -35,6 +36,7 @@ public class DataModeWriter {
         JSONObject jsonOut = new JSONObject();
 
         jsonOut.put("details", writeDetails());
+        jsonOut.put("config", writeConfig());
         jsonOut.put("metadata", metadata.getMetadata());
         jsonOut.put("UI", writeUIFiles());
         jsonOut.put("code-behind", writeCBFiles());
@@ -65,6 +67,15 @@ public class DataModeWriter {
         return jsonDetails;
     }
 
+    private JSONObject writeConfig() {
+        JSONObject jsonConfig = new JSONObject();
+        jsonConfig.put("base_URL", config.getBaseURL());
+        jsonConfig.put("vulnerability_URL", config.getVulnURL());
+        jsonConfig.put("vulnerability_link", config.getVulnLink());
+        jsonConfig.put("file", config.getFiles());
+        return jsonConfig;
+    }
+
     private JSONArray writeUIFiles() {
         JSONArray jsonUIFiles = new JSONArray();
         for (DMUIFile uiFile : uiFiles) {
@@ -93,8 +104,6 @@ public class DataModeWriter {
             JSONObject jsonTestFile = new JSONObject();
             jsonTestFile.put("technology", testFile.getTechnology());
             jsonTestFile.put("file", testFile.getFile().getName());
-            jsonTestFile.put("url", testFile.getBaseURL().toExternalForm());
-            jsonTestFile.put("start-path", testFile.getStartPath());
             jsonTestFiles.add(jsonTestFile);
         }
         return jsonTestFiles;
@@ -200,5 +209,9 @@ public class DataModeWriter {
 
     public void setHints(ArrayList<DMCTFHint> hints) {
         this.hints = hints;
+    }
+
+    public void setConfig(DMConfig config) {
+        this.config = config;
     }
 }
