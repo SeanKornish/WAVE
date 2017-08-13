@@ -25,7 +25,7 @@
                       }
                 },
                 "notes" : {
-                    "description" : "Any additional nodes with valuable information",
+                    "description" : "Any additional notes with valuable information",
                     "type" : "string"
                 }
             },
@@ -131,12 +131,15 @@
                             "type" : "string"
                         },
                         "exposed" : {
+                            "description" : "Is it visible to non-admins",
                             "type" : "boolean"
                         },
                         "available-from" : {
+                            "description" : "Unix date for when the category starts to be available for completion in seconds",
                             "type" : "integer"
                         },
                         "available-until" : {
+                            "description" : "Unix date for when the category stops to be available for completion in seconds",
                             "type" : "integer"
                         }
                     },
@@ -151,12 +154,15 @@
                             "type" : "string"
                         },
                         "exposed" : {
+                            "description" : "Is it visible to non-admins",
                             "type" : "boolean"
                         },
                         "available-from" : {
+                            "description" : "Unix date for when the challenge starts to be available for completion in seconds",
                             "type" : "integer"
                         },
                         "available-until" : {
+                            "description" : "Unix date for when the challenge stops to be available for completion in seconds",
                             "type" : "integer"
                         },
                         "flag" : {
@@ -172,12 +178,15 @@
                             "type" : "integer"
                         },
                         "attempts" : {
+                            "description" : "number of possible attempts",
+
                             "type" : "integer"
                         },
                         "time-between-attempts" : {
                             "type" : "integer"
                         },
                         "must-complete-after"  : {
+                            "description" : "The name of the challenge that needs to be completed before this",
                             "type" : "string"
                         }
                     },
@@ -191,6 +200,7 @@
                                 "type" : "string"
                             },
                             "visible" : {
+                                "description" : "Is it visible to non-admins",
                                 "type" : "boolean"
                             }
                         },
